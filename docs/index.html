@@ -1,155 +1,180 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>请输入文本 - 第三方下载 </title>
-    <meta name="description" content="请输入文本的第三方下载站">
-    <style>
-        :root {
-            --bg-color: #ffffff;
-            --card-bg: #f8f9fa;
-            --text-main: #1a1a1a;
-            --text-sub: #666666;
-            --primary: #0d6efd;
-            --primary-hover: #0b5ed7;
-            --border: #e9ecef;
-            --shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>《请输入文本》 · 少年文学自留地</title>
+  <meta name="description" content="《请输入文本》——少年文学的一方自留地。创刊号现已发布，下载阅读，欢迎投稿。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=Ma+Shan+Zheng&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+  <style>
+    *{ box-sizing:border-box; }
+    body{ margin:0; }
+    html{ scroll-behavior:smooth; }
+    @keyframes ipt-float{ 0%,100%{transform:translateY(0) rotate(-2.5deg);} 50%{transform:translateY(-7px) rotate(-2.5deg);} }
 
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg-color: #121212;
-                --card-bg: #1e1e1e;
-                --text-main: #e0e0e0;
-                --text-sub: #a0a0a0;
-                --primary: #4dabf7;
-                --primary-hover: #339af0;
-                --border: #333333;
-                --shadow: 0 4px 12px rgba(0,0,0,0.3);
-            }
-        }
+    .nav-link{ color:#7a715f; text-decoration:none; border-bottom:1px solid transparent; transition:color .18s ease, border-color .18s ease; }
+    .nav-link:hover{ border-bottom:1px solid #c9543b; color:#2c2620; }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            transition: background 0.3s, color 0.3s;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        header { text-align: center; margin-bottom: 50px; }
-        h1 { font-size: 2.5rem; margin-bottom: 10px; letter-spacing: -0.5px; }
-        .subtitle { color: var(--text-sub); font-size: 1.1rem; }
-        .version-badge {
-            display: inline-block;
-            background: var(--primary);
-            color: #fff;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-top: 10px;
-            font-weight: 600;
-        }
-
-        .download-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: var(--shadow);
-            margin-bottom: 30px;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            padding: 16px;
-            background: var(--primary);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            transition: transform 0.2s, background 0.2s;
-        }
-        .btn:hover { background: var(--primary-hover); transform: translateY(-2px); }
-        .btn svg { margin-right: 8px; }
-
-        .meta-info {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 15px;
-            font-size: 0.85rem;
-            color: var(--text-sub);
-        }
-
-        .changelog { margin-top: 40px; }
-        .changelog h3 { font-size: 1.2rem; margin-bottom: 15px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
-        .changelog ul { list-style: none; padding-left: 0; }
-        .changelog li { margin-bottom: 8px; padding-left: 20px; position: relative; color: var(--text-sub); }
-        .changelog li::before { content: "•"; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
-
-        footer {
-            text-align: center;
-            margin-top: 60px;
-            font-size: 0.85rem;
-            color: var(--text-sub);
-        }
-        footer a { color: var(--primary); text-decoration: none; }
-    </style>
+    .dl-btn{ transition:transform .18s ease, box-shadow .18s ease; }
+    .dl-btn:hover{ transform:translate(-1px,-2px); box-shadow:6px 8px 0 rgba(44,38,32,.24); }
+  </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <h1>请输入文本</h1>
-        <p class="subtitle">刊物第三方下载站</p>
-        <!-- 👇 在这里修改版本号 -->
-        <span class="version-badge">v1.0.0 Stable</span>
-    </header>
+<div style="min-height:100vh; background-color:#faf6ec; background-image:radial-gradient(rgba(74,60,40,.05) 1px, transparent 1.4px); background-size:15px 15px; font-family:'Noto Serif SC',serif; color:#2c2620;">
 
-    <main>
-        <div class="download-card">
-            <!-- 👇 在这里修改下载链接 -->
-            <a href="https://github.com/Celoregen/InputsPlease/releases/latest/download/publication.pdf" class="btn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                下载最新版本 (PDF)
-            </a>
-            <div class="meta-info">
-                <!-- 👇 在这里修改文件大小和日期 -->
-                <span>📦 大小: 20.3 MB</span>
-                <span>📅 更新: 2026-06-25</span>
-            </div>
+  <!-- ===== 报头 ===== -->
+  <header style="max-width:1080px; margin:0 auto; padding:26px 32px; display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:14px; border-bottom:1px dashed #ddd0b8;">
+    <div style="display:flex; align-items:baseline; gap:14px;">
+      <span style="font-family:'Noto Serif SC',serif; font-weight:900; font-size:24px; letter-spacing:.02em;">《请输入文本》</span>
+      <span style="font-family:'Ma Shan Zheng',cursive; font-size:18px; color:#c9543b; transform:rotate(-1.5deg);">少年文学 · 一方自留地</span>
+    </div>
+    <nav style="display:flex; gap:22px; font-family:'Noto Sans SC',sans-serif; font-size:14px; color:#7a715f;">
+      <a href="#latest" class="nav-link">最新一期</a>
+      <a href="#columns" class="nav-link">栏目</a>
+      <a href="#archive" class="nav-link">往期</a>
+      <a href="https://github.com/Celoregen/InputsPlease" class="nav-link">GitHub</a>
+    </nav>
+  </header>
+
+  <!-- ===== 最新一期 ===== -->
+  <section id="latest" style="max-width:660px; margin:0 auto; padding:64px 32px 56px; text-align:center;">
+    <div style="font-family:'Ma Shan Zheng',cursive; font-size:24px; color:#c9543b; letter-spacing:.06em; transform:rotate(-1.5deg); margin-bottom:8px;">最新一期</div>
+    <div style="font-family:'Noto Sans SC',sans-serif; font-size:13px; letter-spacing:.3em; color:#9a8f7d; margin-bottom:34px;">创刊号 · 2026 Vol.1 · 季刊</div>
+
+    <div style="display:flex; justify-content:center; margin-bottom:36px;">
+      <div style="position:relative; animation:ipt-float 6s ease-in-out infinite;">
+        <div style="position:absolute; top:-15px; left:50%; transform:translateX(-50%) rotate(-3deg); width:130px; height:32px; background:rgba(201,84,59,.16); border:1px dashed rgba(201,84,59,.45); z-index:2;"></div>
+        <img src="cover-vol1.jpeg" alt="《请输入文本》创刊号封面" style="display:block; width:262px; height:auto; border:6px solid #fdfbf4; box-shadow:9px 11px 0 rgba(74,60,40,.12), 0 0 0 1px #e3d8c0;">
+      </div>
+    </div>
+
+    <div style="font-family:'Noto Serif SC',serif; font-weight:900; font-size:50px; letter-spacing:.02em; line-height:1.12;">《请输入文本》</div>
+    <div style="font-family:'Noto Sans SC',sans-serif; font-weight:300; font-size:13px; letter-spacing:.42em; color:#a89c86; margin-top:10px;">PLEASE ENTER TEXT</div>
+    <div style="font-family:'Zhi Mang Xing',cursive; font-size:27px; color:#5a5040; margin-top:10px; transform:rotate(-1deg);">—— 少年人的第一个舞台</div>
+
+    <p style="max-width:440px; margin:24px auto 0; font-family:'Noto Serif SC',serif; font-weight:300; font-size:16px; line-height:1.95; color:#6b6252; text-wrap:pretty;">少年文学的第一本，从一句占位符开始。不需要华丽的文笔，也不需要高超的技法——只要有趣，就够了。把你脑子里的奇思妙想，统统丢进来。</p>
+
+    <div style="display:flex; justify-content:center; margin-top:36px;">
+      <a href="https://github.com/Celoregen/InputsPlease/releases/latest/download/publication.pdf" class="dl-btn" style="display:inline-flex; align-items:center; gap:12px; background:#c9543b; color:#fdf2ee; text-decoration:none; font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:18px; padding:17px 42px; border-radius:40px; box-shadow:5px 6px 0 rgba(44,38,32,.18);">
+        <span style="font-size:20px;">↓</span> 下载创刊号 · PDF
+      </a>
+    </div>
+    <div style="font-family:'Noto Sans SC',sans-serif; font-size:13px; color:#9a8f7d; margin-top:16px; letter-spacing:.04em;">PDF · 20.3 MB · 2026.06 更新</div>
+    <p style="max-width:440px; margin:22px auto 0; font-family:'Noto Serif SC',serif; font-weight:300; font-size:14px; line-height:1.85; color:#8a7f6c; text-wrap:pretty;">首期收到 8000+ 来稿——有人上刊，有人落选，各有缘由。<br>愿每一位笔友，都有属于自己长风破浪的明天。</p>
+  </section>
+
+  <!-- ===== 栏目导览 ===== -->
+  <section id="columns" style="max-width:1080px; margin:0 auto; padding:18px 32px 56px;">
+    <div style="display:flex; align-items:center; gap:18px; margin-bottom:8px;">
+      <span style="font-family:'Ma Shan Zheng',cursive; font-size:30px; color:#2c2620;">八个栏目 · 总有一个适合你</span>
+      <span style="flex:1; height:1px; background:#ddd0b8;"></span>
+    </div>
+    <p style="font-family:'Noto Sans SC',sans-serif; font-size:14px; line-height:1.7; color:#9a8f7d; margin:0 0 34px; max-width:680px;">年轻化、脑洞化、高包容、新审美——拒绝老套文风与刻板陈词。从趣味脑洞到诗词书画，八个栏目全赛道覆盖。名字都有点皮，里头装的全是真心。</p>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(244px,1fr)); gap:20px;">
+      <div style="background:rgba(255,255,255,.42); border:1px solid #e6dcc6; border-radius:12px; padding:22px 22px 24px; display:flex; flex-direction:column; gap:10px;">
+        <div style="display:flex; align-items:baseline; gap:11px;">
+          <span style="font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:13px; letter-spacing:.08em; color:#c9543b;">01</span>
+          <span style="font-family:'Ma Shan Zheng',cursive; font-size:27px; color:#2c2620; line-height:1;">笔哩笔哩</span>
         </div>
+        <div style="font-family:'Noto Serif SC',serif; font-weight:300; font-size:14px; line-height:1.75; color:#6b6252; text-wrap:pretty;">趣味脑洞作品专栏——不限题材，只收有趣的那一种。</div>
+      </div>
+      <div style="background:rgba(255,255,255,.42); border:1px solid #e6dcc6; border-radius:12px; padding:22px 22px 24px; display:flex; flex-direction:column; gap:10px;">
+        <div style="display:flex; align-items:baseline; gap:11px;">
+          <span style="font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:13px; letter-spacing:.08em; color:#c9543b;">02</span>
+          <span style="font-family:'Ma Shan Zheng',cursive; font-size:27px; color:#2c2620; line-height:1;">笔上不足</span>
+        </div>
+        <div style="font-family:'Noto Serif SC',serif; font-weight:300; font-size:14px; line-height:1.75; color:#6b6252; text-wrap:pretty;">短篇小说专栏，单篇万字以内，三两千字也动人。</div>
+      </div>
+      <div style="background:rgba(255,255,255,.42); border:1px solid #e6dcc6; border-radius:12px; padding:22px 22px 24px; display:flex; flex-direction:column; gap:10px;">
+        <div style="display:flex; align-items:baseline; gap:11px;">
+          <span style="font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:13px; letter-spacing:.08em; color:#c9543b;">03</span>
+          <span style="font-family:'Ma Shan Zheng',cursive; font-size:27px; color:#2c2620; line-height:1;">笔下有娱</span>
+        </div>
+        <div style="font-family:'Noto Serif SC',serif; font-weight:300; font-size:14px; line-height:1.75; color:#6b6252; text-wrap:pretty;">长篇小说与连载，值得一路追更的故事都在这。</div>
+      </div>
+      <div style="background:rgba(255,255,255,.42); border:1px solid #e6dcc6; border-radius:12px; padding:22px 22px 24px; display:flex; flex-direction:column; gap:10px;">
+        <div style="display:flex; align-items:baseline; gap:11px;">
+          <span style="font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:13px; letter-spacing:.08em; color:#c9543b;">04</span>
+          <span style="font-family:'Ma Shan Zheng',cursive; font-size:27px; color:#2c2620; line-height:1;">评评无奇</span>
+        </div>
+        <div style="font-family:'Noto Serif SC',serif; font-weight:300; font-size:14px; line-height:1.75; color:#6b6252; text-wrap:pretty;">文学评论专栏——聊文学，也欢迎你来吐槽与创新。</div>
+      </div>
+      <div style="background:rgba(255,255,255,.42); border:1px solid #e6dcc6; border-radius:12px; padding:22px 22px 24px; display:flex; flex-direction:column; gap:10px;">
+        <div style="display:flex; align-items:baseline; gap:11px;">
+          <span style="font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:13px; letter-spacing:.08em; color:#c9543b;">05</span>
+          <span style="font-family:'Ma Shan Zheng',cursive; font-size:27px; color:#2c2620; line-height:1;">被诗咬了</span>
+        </div>
+        <div style="font-family:'Noto Serif SC',serif; font-weight:300; font-size:14px; line-height:1.75; color:#6b6252; text-wrap:pretty;">现代诗专栏，脑子里进了水的句子也照收。</div>
+      </div>
+      <div style="background:rgba(255,255,255,.42); border:1px solid #e6dcc6; border-radius:12px; padding:22px 22px 24px; display:flex; flex-direction:column; gap:10px;">
+        <div style="display:flex; align-items:baseline; gap:11px;">
+          <span style="font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:13px; letter-spacing:.08em; color:#c9543b;">06</span>
+          <span style="font-family:'Ma Shan Zheng',cursive; font-size:27px; color:#2c2620; line-height:1;">诗不打烊</span>
+        </div>
+        <div style="font-family:'Noto Serif SC',serif; font-weight:300; font-size:14px; line-height:1.75; color:#6b6252; text-wrap:pretty;">旧体诗专栏，词、赋与格律，讲究遣词平仄。</div>
+      </div>
+      <div style="background:rgba(255,255,255,.42); border:1px solid #e6dcc6; border-radius:12px; padding:22px 22px 24px; display:flex; flex-direction:column; gap:10px;">
+        <div style="display:flex; align-items:baseline; gap:11px;">
+          <span style="font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:13px; letter-spacing:.08em; color:#c9543b;">07</span>
+          <span style="font-family:'Ma Shan Zheng',cursive; font-size:27px; color:#2c2620; line-height:1;">给我刊刊</span>
+        </div>
+        <div style="font-family:'Noto Serif SC',serif; font-weight:300; font-size:14px; line-height:1.75; color:#6b6252; text-wrap:pretty;">美术稿件专栏，插画与画作的展示窗口。</div>
+      </div>
+      <div style="background:rgba(255,255,255,.42); border:1px solid #e6dcc6; border-radius:12px; padding:22px 22px 24px; display:flex; flex-direction:column; gap:10px;">
+        <div style="display:flex; align-items:baseline; gap:11px;">
+          <span style="font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:13px; letter-spacing:.08em; color:#c9543b;">08</span>
+          <span style="font-family:'Ma Shan Zheng',cursive; font-size:27px; color:#2c2620; line-height:1;">字由字在</span>
+        </div>
+        <div style="font-family:'Noto Serif SC',serif; font-weight:300; font-size:14px; line-height:1.75; color:#6b6252; text-wrap:pretty;">书法艺术专栏，临帖、好字与笔墨交流。</div>
+      </div>
+    </div>
+  </section>
 
-        <section class="changelog">
-            <h3>📝 更新日志 (v1.0.0)</h3>
-            <ul>
-                <li>🎉 创刊号正式发布</li>
-                <li>✨ *</li>
-                <li>🐛 *</li>
-                <li>📚 *</li>
-            </ul>
-        </section>
-    </main>
+  <!-- ===== 往期 ===== -->
+  <section id="archive" style="max-width:1080px; margin:0 auto; padding:18px 32px 80px;">
+    <div style="display:flex; align-items:center; gap:18px; margin-bottom:8px;">
+      <span style="font-family:'Ma Shan Zheng',cursive; font-size:30px; color:#2c2620;">往期 · 翻翻看</span>
+      <span style="flex:1; height:1px; background:#ddd0b8;"></span>
+    </div>
+    <p style="font-family:'Noto Sans SC',sans-serif; font-size:14px; color:#9a8f7d; margin:0 0 34px;">更多期数正在路上，也欢迎你来投稿，让这方自留地一直长着新的青禾。</p>
 
-    <footer>
-        <p>© 2026 InputsPlease. 由 <a href="https://github.com/Celoregen/InputsPlease" target="_blank">GitHub</a> 托管</p>
-        <p style="margin-top:5px;">
-            <a href="https://github.com/Celoregen/InputsPlease/releases" target="_blank">历史版本</a> · 
-            <a href="https://github.com/Celoregen/InputsPlease/issues" target="_blank">问题反馈</a>
-        </p>
-    </footer>
+    <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(204px,1fr)); gap:26px;">
+      <div style="border:1.5px dashed #d6c9af; border-radius:8px; background:rgba(255,255,255,.32); padding:18px 18px 20px; display:flex; flex-direction:column; align-items:center; gap:14px;">
+        <div style="width:100%; aspect-ratio:3/4; background:repeating-linear-gradient(45deg,#f0ead9,#f0ead9 11px,#e9e0cb 11px,#e9e0cb 22px); border:1px solid #e0d6bf; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+          <span style="font-family:'Ma Shan Zheng',cursive; font-size:46px; color:#cabd9f;">？</span>
+        </div>
+        <div style="font-family:'Noto Sans SC',sans-serif; font-size:13px; letter-spacing:.16em; color:#9a8f7d;">No.02</div>
+        <div style="font-family:'Ma Shan Zheng',cursive; font-size:21px; color:#b69a6a;">下一期 · 征稿中</div>
+      </div>
+      <div style="border:1.5px dashed #d6c9af; border-radius:8px; background:rgba(255,255,255,.32); padding:18px 18px 20px; display:flex; flex-direction:column; align-items:center; gap:14px;">
+        <div style="width:100%; aspect-ratio:3/4; background:repeating-linear-gradient(45deg,#f0ead9,#f0ead9 11px,#e9e0cb 11px,#e9e0cb 22px); border:1px solid #e0d6bf; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+          <span style="font-family:'Ma Shan Zheng',cursive; font-size:46px; color:#cabd9f;">？</span>
+        </div>
+        <div style="font-family:'Noto Sans SC',sans-serif; font-size:13px; letter-spacing:.16em; color:#9a8f7d;">No.03</div>
+        <div style="font-family:'Ma Shan Zheng',cursive; font-size:21px; color:#b69a6a;">敬请期待</div>
+      </div>
+      <div style="border:1.5px dashed #d6c9af; border-radius:8px; background:rgba(255,255,255,.32); padding:18px 18px 20px; display:flex; flex-direction:column; align-items:center; gap:14px;">
+        <div style="width:100%; aspect-ratio:3/4; background:repeating-linear-gradient(45deg,#f0ead9,#f0ead9 11px,#e9e0cb 11px,#e9e0cb 22px); border:1px solid #e0d6bf; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+          <span style="font-family:'Ma Shan Zheng',cursive; font-size:46px; color:#cabd9f;">？</span>
+        </div>
+        <div style="font-family:'Noto Sans SC',sans-serif; font-size:13px; letter-spacing:.16em; color:#9a8f7d;">No.04</div>
+        <div style="font-family:'Ma Shan Zheng',cursive; font-size:21px; color:#b69a6a;">敬请期待</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 页脚 ===== -->
+  <footer style="max-width:1080px; margin:0 auto; padding:26px 32px 40px; border-top:1px dashed #ddd0b8; text-align:center; font-family:'Noto Sans SC',sans-serif; font-size:12px; color:#b3a890;">
+    <div style="font-family:'Noto Serif SC',serif; font-weight:300; font-size:13px; color:#8a7f6c; margin-bottom:12px;">民刊 · 暂定季刊 · ISSN 2709-5754 · 由 B 站 @笔给你你来写 与 @安晴 发起组建</div>
+    © 2026 《请输入文本》 · 以笔为炬，以文为桥
+    由 <a href="https://github.com/Celoregen/InputsPlease" style="color:#a08a5c; text-decoration:none; border-bottom:1px solid #ddd0b8;">GitHub</a> 托管 ·
+    <a href="https://github.com/Celoregen/InputsPlease/releases" style="color:#a08a5c; text-decoration:none; border-bottom:1px solid #ddd0b8;">历史版本</a> ·
+    <a href="https://github.com/Celoregen/InputsPlease/issues" style="color:#a08a5c; text-decoration:none; border-bottom:1px solid #ddd0b8;">问题反馈</a>
+  </footer>
 </div>
 
 </body>
