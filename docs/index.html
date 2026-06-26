@@ -19,6 +19,22 @@
 
     .dl-btn{ transition:transform .18s ease, box-shadow .18s ease; }
     .dl-btn:hover{ transform:translate(-1px,-2px); box-shadow:6px 8px 0 rgba(44,38,32,.24); }
+
+    @media (max-width:600px){
+      /* tighter side gutters on phones */
+      .masthead{ padding:20px 18px !important; }
+      #latest{ padding:44px 18px 44px !important; }
+      #columns{ padding:14px 18px 44px !important; }
+      #archive{ padding:14px 18px 60px !important; }
+      .site-footer{ padding:24px 18px 36px !important; }
+
+      /* masthead: let brand + tagline stack instead of breaking words */
+      .mh-brand{ flex-wrap:wrap !important; gap:4px 12px !important; }
+      .mh-title{ font-size:21px !important; white-space:nowrap; }
+
+      /* hero title fits on one line */
+      .hero-title{ font-size:36px !important; }
+    }
   </style>
 </head>
 <body>
@@ -26,9 +42,9 @@
 <div style="min-height:100vh; background-color:#faf6ec; background-image:radial-gradient(rgba(74,60,40,.05) 1px, transparent 1.4px); background-size:15px 15px; font-family:'Noto Serif SC',serif; color:#2c2620;">
 
   <!-- ===== 报头 ===== -->
-  <header style="max-width:1080px; margin:0 auto; padding:26px 32px; display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:14px; border-bottom:1px dashed #ddd0b8;">
-    <div style="display:flex; align-items:baseline; gap:14px;">
-      <span style="font-family:'Noto Serif SC',serif; font-weight:900; font-size:24px; letter-spacing:.02em;">《请输入文本》</span>
+  <header class="masthead" style="max-width:1080px; margin:0 auto; padding:26px 32px; display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:14px; border-bottom:1px dashed #ddd0b8;">
+    <div class="mh-brand" style="display:flex; align-items:baseline; gap:14px;">
+      <span class="mh-title" style="font-family:'Noto Serif SC',serif; font-weight:900; font-size:24px; letter-spacing:.02em;">《请输入文本》</span>
       <span style="font-family:'Ma Shan Zheng',cursive; font-size:18px; color:#c9543b; transform:rotate(-1.5deg);">少年文学 · 一方自留地</span>
     </div>
     <nav style="display:flex; gap:22px; font-family:'Noto Sans SC',sans-serif; font-size:14px; color:#7a715f;">
@@ -51,7 +67,7 @@
       </div>
     </div>
 
-    <div style="font-family:'Noto Serif SC',serif; font-weight:900; font-size:50px; letter-spacing:.02em; line-height:1.12;">《请输入文本》</div>
+    <div class="hero-title" style="font-family:'Noto Serif SC',serif; font-weight:900; font-size:50px; letter-spacing:.02em; line-height:1.12;">《请输入文本》</div>
     <div style="font-family:'Noto Sans SC',sans-serif; font-weight:300; font-size:13px; letter-spacing:.42em; color:#a89c86; margin-top:10px;">PLEASE ENTER TEXT</div>
     <div style="font-family:'Zhi Mang Xing',cursive; font-size:27px; color:#5a5040; margin-top:10px; transform:rotate(-1deg);">—— 少年人的第一个舞台</div>
 
@@ -168,7 +184,7 @@
   </section>
 
   <!-- ===== 页脚 ===== -->
-  <footer style="max-width:1080px; margin:0 auto; padding:26px 32px 40px; border-top:1px dashed #ddd0b8; text-align:center; font-family:'Noto Sans SC',sans-serif; font-size:12px; color:#b3a890;">
+  <footer class="site-footer" style="max-width:1080px; margin:0 auto; padding:26px 32px 40px; border-top:1px dashed #ddd0b8; text-align:center; font-family:'Noto Sans SC',sans-serif; font-size:12px; color:#b3a890;">
     <div style="font-family:'Noto Serif SC',serif; font-weight:300; font-size:13px; color:#8a7f6c; margin-bottom:12px;">民刊 · 暂定季刊 · ISSN 2709-5754 · 由 B 站 @笔给你你来写 与 @安晴 发起组建</div>
     © 2026 《请输入文本》 · 以笔为炬，以文为桥
     由 <a href="https://github.com/Celoregen/InputsPlease" style="color:#a08a5c; text-decoration:none; border-bottom:1px solid #ddd0b8;">GitHub</a> 托管 ·
