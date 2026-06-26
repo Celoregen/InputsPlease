@@ -20,6 +20,34 @@
     .dl-btn{ transition:transform .18s ease, box-shadow .18s ease; }
     .dl-btn:hover{ transform:translate(-1px,-2px); box-shadow:6px 8px 0 rgba(44,38,32,.24); }
 
+    /* 最新一期 — single column by default (mobile keeps the original stacked layout) */
+    .latest-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      grid-template-areas:"head" "cover" "body";
+      justify-items:center;
+    }
+    .latest-head{ grid-area:head; }
+    .latest-cover{ grid-area:cover; }
+    .latest-body{ grid-area:body; }
+
+    /* wide screens (pc): two columns — cover art left, everything else right */
+    @media (min-width:820px){
+      #latest{ max-width:960px !important; text-align:left !important; }
+      .latest-grid{
+        grid-template-columns:auto 1fr;
+        grid-template-areas:
+          "cover head"
+          "cover body";
+        column-gap:56px;
+        align-items:center;
+        justify-items:start;
+      }
+      .latest-cover .cover-wrap{ margin-bottom:0 !important; }
+      .latest-body .latest-p{ margin-left:0 !important; margin-right:0 !important; }
+      .latest-body .dl-wrap{ justify-content:flex-start !important; }
+    }
+
     @media (max-width:600px){
       /* tighter side gutters on phones */
       .masthead{ padding:20px 18px !important; }
@@ -57,29 +85,39 @@
 
   <!-- ===== 最新一期 ===== -->
   <section id="latest" style="max-width:660px; margin:0 auto; padding:64px 32px 56px; text-align:center;">
-    <div style="font-family:'Ma Shan Zheng',cursive; font-size:24px; color:#c9543b; letter-spacing:.06em; transform:rotate(-1.5deg); margin-bottom:8px;">最新一期</div>
-    <div style="font-family:'Noto Sans SC',sans-serif; font-size:13px; letter-spacing:.3em; color:#9a8f7d; margin-bottom:34px;">创刊号 · 2026 Vol.1 · 季刊</div>
+    <div class="latest-grid">
 
-    <div style="display:flex; justify-content:center; margin-bottom:36px;">
-      <div style="position:relative; animation:ipt-float 6s ease-in-out infinite;">
-        <div style="position:absolute; top:-15px; left:50%; transform:translateX(-50%) rotate(-3deg); width:130px; height:32px; background:rgba(201,84,59,.16); border:1px dashed rgba(201,84,59,.45); z-index:2;"></div>
-        <img src="cover-vol1.jpeg" alt="《请输入文本》创刊号封面" style="display:block; width:262px; height:auto; border:6px solid #fdfbf4; box-shadow:9px 11px 0 rgba(74,60,40,.12), 0 0 0 1px #e3d8c0;">
+      <div class="latest-head">
+        <div style="font-family:'Ma Shan Zheng',cursive; font-size:24px; color:#c9543b; letter-spacing:.06em; transform:rotate(-1.5deg); margin-bottom:8px;">最新一期</div>
+        <div style="font-family:'Noto Sans SC',sans-serif; font-size:13px; letter-spacing:.3em; color:#9a8f7d; margin-bottom:34px;">创刊号 · 2026 Vol.1 · 季刊</div>
       </div>
+
+      <div class="latest-cover">
+        <div class="cover-wrap" style="display:flex; justify-content:center; margin-bottom:36px;">
+          <div style="position:relative; animation:ipt-float 6s ease-in-out infinite;">
+            <div style="position:absolute; top:-15px; left:50%; transform:translateX(-50%) rotate(-3deg); width:130px; height:32px; background:rgba(201,84,59,.16); border:1px dashed rgba(201,84,59,.45); z-index:2;"></div>
+            <img src="cover-vol1.jpeg" alt="《请输入文本》创刊号封面" style="display:block; width:262px; height:auto; border:6px solid #fdfbf4; box-shadow:9px 11px 0 rgba(74,60,40,.12), 0 0 0 1px #e3d8c0;">
+          </div>
+        </div>
+      </div>
+
+      <div class="latest-body">
+        <div class="hero-title" style="font-family:'Noto Serif SC',serif; font-weight:900; font-size:50px; letter-spacing:.02em; line-height:1.12;">《请输入文本》</div>
+        <div style="font-family:'Noto Sans SC',sans-serif; font-weight:300; font-size:13px; letter-spacing:.42em; color:#a89c86; margin-top:10px;">PLEASE ENTER TEXT</div>
+        <div style="font-family:'Zhi Mang Xing',cursive; font-size:27px; color:#5a5040; margin-top:10px; transform:rotate(-1deg);">—— 你负责打字，剩下的交给我们</div>
+
+        <p class="latest-p" style="max-width:440px; margin:24px auto 0; font-family:'Noto Serif SC',serif; font-weight:300; font-size:16px; line-height:1.95; color:#6b6252; text-wrap:pretty;">一个输入框装不下八千份稿子，于是它变成了一本杂志。</p>
+
+        <div class="dl-wrap" style="display:flex; justify-content:center; margin-top:36px;">
+          <a href="https://github.com/Celoregen/InputsPlease/releases/latest/download/publication.pdf" class="dl-btn" style="display:inline-flex; align-items:center; gap:12px; background:#c9543b; color:#fdf2ee; text-decoration:none; font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:18px; padding:17px 42px; border-radius:40px; box-shadow:5px 6px 0 rgba(44,38,32,.18);">
+            <span style="font-size:20px;">↓</span> 下载创刊号 · PDF
+          </a>
+        </div>
+        <div style="font-family:'Noto Sans SC',sans-serif; font-size:13px; color:#9a8f7d; margin-top:16px; letter-spacing:.04em;">PDF · 20.3 MB · 2026.06 更新</div>
+        <p class="latest-p" style="max-width:440px; margin:22px auto 0; font-family:'Noto Serif SC',serif; font-weight:300; font-size:14px; line-height:1.85; color:#8a7f6c; text-wrap:pretty;">8000+ 份来稿。感谢每一个敲键盘的你。</p>
+      </div>
+
     </div>
-
-    <div class="hero-title" style="font-family:'Noto Serif SC',serif; font-weight:900; font-size:50px; letter-spacing:.02em; line-height:1.12;">《请输入文本》</div>
-    <div style="font-family:'Noto Sans SC',sans-serif; font-weight:300; font-size:13px; letter-spacing:.42em; color:#a89c86; margin-top:10px;">PLEASE ENTER TEXT</div>
-    <div style="font-family:'Zhi Mang Xing',cursive; font-size:27px; color:#5a5040; margin-top:10px; transform:rotate(-1deg);">—— 你负责打字，剩下的交给我们</div>
-
-    <p style="max-width:440px; margin:24px auto 0; font-family:'Noto Serif SC',serif; font-weight:300; font-size:16px; line-height:1.95; color:#6b6252; text-wrap:pretty;">一个输入框装不下八千份稿子，于是它变成了一本杂志。</p>
-
-    <div style="display:flex; justify-content:center; margin-top:36px;">
-      <a href="https://github.com/Celoregen/InputsPlease/releases/latest/download/publication.pdf" class="dl-btn" style="display:inline-flex; align-items:center; gap:12px; background:#c9543b; color:#fdf2ee; text-decoration:none; font-family:'Noto Sans SC',sans-serif; font-weight:700; font-size:18px; padding:17px 42px; border-radius:40px; box-shadow:5px 6px 0 rgba(44,38,32,.18);">
-        <span style="font-size:20px;">↓</span> 下载创刊号 · PDF
-      </a>
-    </div>
-    <div style="font-family:'Noto Sans SC',sans-serif; font-size:13px; color:#9a8f7d; margin-top:16px; letter-spacing:.04em;">PDF · 20.3 MB · 2026.06 更新</div>
-    <p style="max-width:440px; margin:22px auto 0; font-family:'Noto Serif SC',serif; font-weight:300; font-size:14px; line-height:1.85; color:#8a7f6c; text-wrap:pretty;">8000+ 份来稿。感谢每一个敲键盘的你。</p>
   </section>
 
   <!-- ===== 栏目导览 ===== -->
