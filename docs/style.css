@@ -1,0 +1,345 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #faf6ec;
+    background-image: radial-gradient(rgba(74, 60, 40, 0.05) 1px, transparent 1.4px);
+    background-size: 15px 15px;
+    font-family: 'Noto Serif SC', serif;
+    color: #2c2620;
+}
+
+.container {
+    min-height: 100vh;
+}
+
+
+/* 报头样式 */
+.masthead {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 26px 32px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+    border-bottom: 1px dashed #ddd0b8;
+}
+
+.mh-brand {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+}
+
+.mh-title {
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 900;
+    font-size: 24px;
+    letter-spacing: 0.02em;
+}
+
+.mh-subtitle {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 18px;
+    color: #c9543b;
+    transform: rotate(-1.5deg);
+}
+
+.main-nav {
+    display: flex;
+    gap: 22px;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 14px;
+    color: #7a715f;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 最新一期样式 */
+.latest-section {
+    max-width: 660px;
+    margin: 0 auto;
+    padding: 64px 32px 56px;
+    text-align: center;
+}
+
+.latest-grid {
+    display: grid;
+    gap: 36px;
+}
+
+.latest-head {
+    display: grid;
+    gap: 8px;
+}
+
+.latest-label {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 24px;
+    color: #c9543b;
+    letter-spacing: 0.06em;
+    transform: rotate(-1.5deg);
+}
+
+.latest-meta {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.3em;
+    color: #9a8f7d;
+}
+
+.latest-cover {
+    display: grid;
+    justify-content: center;
+}
+
+.cover-wrap {
+    position: relative;
+    animation: ipt-float 6s ease-in-out infinite;
+}
+
+.cover-decoration {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-3deg);
+    width: 130px;
+    height: 32px;
+    background: rgba(201, 84, 59, 0.16);
+    border: 1px dashed rgba(201, 84, 59, 0.45);
+    z-index: 2;
+}
+
+.cover-image {
+    display: block;
+    width: 262px;
+    height: auto;
+    border: 6px solid #fdfbf4;
+    box-shadow: 9px 11px 0 rgba(74, 60, 40, 0.12), 0 0 0 1px #e3d8c0;
+}
+
+.latest-body {
+    display: grid;
+    gap: 10px;
+}
+
+.hero-title {
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 900;
+    font-size: 50px;
+    letter-spacing: 0.02em;
+    line-height: 1.12;
+}
+
+.hero-subtitle {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 0.42em;
+    color: #a89c86;
+}
+
+.hero-slogan {
+    font-family: 'Zhi Mang Xing', cursive;
+    font-size: 27px;
+    color: #5a5040;
+    transform: rotate(-1deg);
+}
+
+.latest-p {
+    max-width: 440px;
+    margin: 0 auto;
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.95;
+    color: #6b6252;
+    text-wrap: pretty;
+}
+
+.latest-p.small {
+    font-size: 14px;
+    line-height: 1.85;
+    color: #8a7f6c;
+}
+
+.dl-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 36px;
+}
+
+.dl-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #c9543b;
+    color: #fdf2ee;
+    text-decoration: none;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 17px 42px;
+    border-radius: 40px;
+    box-shadow: 5px 6px 0 rgba(44, 38, 32, 0.18);
+}
+
+.dl-btn span {
+    font-size: 20px;
+}
+
+.dl-info {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 13px;
+    color: #9a8f7d;
+    margin-top: 16px;
+    letter-spacing: 0.04em;
+}
+
+/* 栏目导览样式 */
+.columns-section {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 18px 32px 56px;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 34px;
+}
+
+.section-title {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 30px;
+    color: #2c2620;
+}
+
+.divider {
+    flex: 1;
+    height: 1px;
+    background: #ddd0b8;
+}
+
+.columns-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(244px, 1fr));
+    gap: 20px;
+}
+
+.column-card {
+    background: rgba(255, 255, 255, 0.42);
+    border: 1px solid #e6dcc6;
+    border-radius: 12px;
+    padding: 22px 22px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.column-header {
+    display: flex;
+    align-items: baseline;
+    gap: 11px;
+}
+
+.column-number {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: #c9543b;
+}
+
+.column-name {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 27px;
+    color: #2c2620;
+    line-height: 1;
+}
+
+.column-desc {
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.75;
+    color: #6b6252;
+    text-wrap: pretty;
+}
+
+/* 往期样式 */
+.archive-section {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 18px 32px 80px;
+}
+
+.archive-desc {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 14px;
+    color: #9a8f7d;
+    margin: 0 0 34px;
+}
+
+.archive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(204px, 1fr));
+    gap: 26px;
+}
+
+.archive-card {
+    border: 1.5px dashed #d6c9af;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.32);
+    padding: 18px 18px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.archive-cover {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: repeating-linear-gradient(45deg, #f0ead9, #f0ead9 11px, #e9e0cb 11px, #e9e0cb 22px);
+    border: 1px solid #e0d6bf;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.archive-placeholder {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 46px;
+    color: #cabd9f;
+}
+
+.archive-number {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    color: #9a8f7d;
+}
+
+.archive-status {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 21px;
+    color: #b69a6a;
+}
+
+/* 动画 */
+@keyframes ipt-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
