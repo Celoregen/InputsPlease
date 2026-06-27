@@ -1,0 +1,14 @@
+body{
+    min-height: 100vh;
+    background-color: #faf6ec;
+    background-image: radial-gradient(rgba(74,60,40,0.05) 1px);
+    background-size: 15px 15px;
+    font-family: 'Noto Serif SC', serif;
+    color: #2c2620;
+}
+
+.background{
+    min-height: 100vh;
+    max-width: 90vw;
+    margin: 0 auto;
+}
