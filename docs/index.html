@@ -1,156 +1,69 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>《请输入文本》· 我们的文学自留地</title>
-    <link rel="icon" href="/img/ico.svg">
-    <meta name="description" content="《请输入文本》—— 一方文学的自留地。创刊号现已发布，下载阅读，欢迎投稿。">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=Ma+Shan+Zheng&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <!-- ===== 报头 ===== -->
-        <header class="masthead">
-            <div class="mh-brand">
-                <span class="mh-title">《请输入文本》</span>
-                <span class="mh-subtitle"> 一方文学自留地</span>
-            </div>
-            <nav class="main-nav">
-                <a href="#latest" class="nav-link">最新一期</a>
-                <a href="#columns" class="nav-link">栏目</a>
-                <a href="#archive" class="nav-link">往期</a>
-                <a href="https://github.com/Celoregen/InputsPlease" class="nav-link">GitHub</a>
-            </nav>
-        </header>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>《请输入文本》· 我们的文学自留地</title>
+        <link rel="icon" href="/img/ico.svg">
+        <meta name="description" content="《请输入文本》—— 一方文学的自留地。创刊号现已发布，下载阅读，欢迎投稿。">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@300;700&family=Noto+Serif+SC:wght@300;900&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="background">
 
-        <!-- ===== 最新一期 ===== -->
-        <section id="latest" class="latest-section">
-            <div class="latest-grid">
-                <div class="latest-head">
-                    <div class="latest-label">最新一期</div>
-                    <div class="latest-meta">创刊号 · 2026 Vol.1 · 季刊</div>
+            <!-- 顶部导航栏 -->
+            <header>
+                <div class="ico-space">
+                    <span class="web-title">《请输入文本》</span>
+                    <span class="web-slogan">我们的文学自留地</span>
                 </div>
-                <div class="latest-cover">
-                    <div class="cover-wrap">
-                        <div class="cover-decoration"></div>
-                        <img src="/img/cover.jpeg" alt="《请输入文本》创刊号封面" class="cover-image">
-                    </div>
-                </div>
-                <div class="latest-body">
-                    <div class="hero-title">《请输入文本》</div>
-                    <div class="hero-subtitle">PLEASE ENTER TEXT</div>
-                    <div class="hero-slogan">—— 你负责打字，剩下的交给我们</div>
-                    <p class="latest-p">一个输入框装不下八千份稿子，于是它变成了一本杂志。</p>
-                    <div class="dl-wrap">
-                        <a href="https://github.com/Celoregen/InputsPlease/releases/latest/download/publication.pdf" class="dl-btn">↓ 下载最新一期 · PDF</a>
-                    </div>
-                    <div class="dl-info">PDF · 20.3 MB · 2026.06 更新</div>
-                    <p class="latest-p small">8000+ 份来稿。感谢每一个敲键盘的你。</p>
-                </div>
-            </div>
-        </section>
+                <nav>
+                    <a href="" class="navigation-button">最新一期</a>
+                    <a href="" class="navigation-button">栏目导览</a>
+                    <a href="" class="navigation-button">往期下载</a>
+                    <a href="" class="navigation-button">Github</a>
+                </nav>
+            </header>
 
-        <!-- ===== 栏目导览 ===== -->
-        <section id="columns" class="columns-section">
-            <div class="section-header">
-                <span class="section-title">八个坑位</span>
-                <span class="divider"></span>
-            </div>
-            <div class="columns-grid">
-                <div class="column-card">
-                    <div class="column-header">
-                        <span class="column-number">01</span>
-                        <span class="column-name">笔哩笔哩</span>
+            <!-- 最新一期下载主体 -->
+             <section class="body-container">
+                <div class="cover-part">
+                    <div class="img-head">
+                        <div class="img-word">最新一期</div>
+                        <div class="img-meta">创刊号 · 2026 Vol.1 · 季刊</div>
                     </div>
-                    <div class="column-desc">不限题材，有趣就行，无聊勿扰。</div>
-                </div>
-                <div class="column-card">
-                    <div class="column-header">
-                        <span class="column-number">02</span>
-                        <span class="column-name">笔上不足</span>
+                    <div class="img-body">
+                        <div class="img-tap"> </div>
+                        <img src="/img/cover.jpeg" alt="请输入文本 · 最新一期封面" class="img-cover">
                     </div>
-                    <div class="column-desc">万字封顶。写短点也挺好。</div>
                 </div>
-                <div class="column-card">
-                    <div class="column-header">
-                        <span class="column-number">03</span>
-                        <span class="column-name">笔下有娱</span>
-                    </div>
-                    <div class="column-desc">长篇连载。开坑就要填。</div>
-                </div>
-                <div class="column-card">
-                    <div class="column-header">
-                        <span class="column-number">04</span>
-                        <span class="column-name">评评无奇</span>
-                    </div>
-                    <div class="column-desc">吐槽也是一种文学批评。</div>
-                </div>
-                <div class="column-card">
-                    <div class="column-header">
-                        <span class="column-number">05</span>
-                        <span class="column-name">被诗咬了</span>
-                    </div>
-                    <div class="column-desc">脑子进水的句子也照收。</div>
-                </div>
-                <div class="column-card">
-                    <div class="column-header">
-                        <span class="column-number">06</span>
-                        <span class="column-name">诗不打烊</span>
-                    </div>
-                    <div class="column-desc">平平仄仄平。懂的来。</div>
-                </div>
-                <div class="column-card">
-                    <div class="column-header">
-                        <span class="column-number">07</span>
-                        <span class="column-name">给我刊刊</span>
-                    </div>
-                    <div class="column-desc">画出来给我们看看。</div>
-                </div>
-                <div class="column-card">
-                    <div class="column-header">
-                        <span class="column-number">08</span>
-                        <span class="column-name">字由字在</span>
-                    </div>
-                    <div class="column-desc">好字上墙，丑字别跑。</div>
-                </div>
-            </div>
-        </section>
 
-        <!-- ===== 往期 ===== -->
-        <section id="archive" class="archive-section">
-            <div class="section-header">
-                <span class="section-title">往期 · 翻翻看</span>
-                <span class="divider"></span>
-            </div>
-            <p class="archive-desc">催更没用，投稿有用。</p>
-            <div class="archive-grid">
-                <div class="archive-card">
-                    <div class="archive-cover">
-                        <span class="archive-placeholder">？</span>
+                <div class="button-part">
+                    <div class="title">《请输入文本》</div>
+                    <div class="title-en">PLEASE ENTER TEXT</div>
+                    <div class="subtitle">—— 你负责打字，剩下的交给我们</div>
+                    <p class="introduction">文本框装不下八千份稿子，于是它变成了一本杂志。</p>
+                    <div class="download-button-container">
+                        <a href="" class="download-button">↓ 下载最新一期·PDF</a>
                     </div>
-                    <div class="archive-number">No.02</div>
-                    <div class="archive-status">下一期 · 征稿中</div>
+                    <div class="file-information">文件信息</div>
+                    <p class="notice">感谢每一个热爱创作的你。</p>
                 </div>
-                <div class="archive-card">
-                    <div class="archive-cover">
-                        <span class="archive-placeholder">？</span>
-                    </div>
-                    <div class="archive-number">No.03</div>
-                    <div class="archive-status">敬请期待</div>
-                </div>
-                <div class="archive-card">
-                    <div class="archive-cover">
-                        <span class="archive-placeholder">？</span>
-                    </div>
-                    <div class="archive-number">No.04</div>
-                    <div class="archive-status">敬请期待</div>
-                </div>
-            </div>
-        </section>
-    </div>
-</body>
+             </section>
+
+            <!-- 网站脚注 -->
+             <footer>
+                <p>
+                    © 2026 请输入文本 由 <a href="" target="">GitHub</a> 托管
+                </p>
+                <p >
+                    <a href="" target="_blank">历史版本</a> ·  
+                    <a href="" target="_blank">问题反馈</a>
+                </p>
+             </footer>
+        </div>
+    </body>
 </html>
