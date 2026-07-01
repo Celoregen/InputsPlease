@@ -50,7 +50,7 @@
                     <div class="download-button-container">
                         <a href="https://github.com/Celoregen/InputsPlease/releases/latest/download/publication.pdf" class="download-button">↓ 下载最新一期·PDF</a>
                     </div>
-                    <div class="file-information">文件信息</div>
+                    <div class="file-information" id="file-info">文件信息</div>
                     <p class="notice">感谢每一个热爱创作的你。</p>
                 </div>
              </section>
@@ -67,4 +67,51 @@
              </footer>
         </div>
     </body>
+
+    <script>
+        
+        const fileInfo = document.getElementById('file-info');
+
+            (async () => {
+
+                try {
+
+                    fileInfo.textContent = '请求中...';
+
+                    const res = await fetch('https://api.github.com/repos/Celoregen/InputsPlease/releases/latest');
+
+                    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+                    const data = await res.json();
+
+                    const asset = data.assets?.find(a => a.name === 'publication.pdf');
+
+                    const sizeBytes = asset?.size ?? 0;
+
+                    const format = asset?.name?.split('.').pop()?.toUpperCase() ?? 'UNKNOWN';
+
+                    const downloads = asset?.download_count ?? 0;
+
+                    const sizeStr = sizeBytes > 1048576
+
+                    ? `${(sizeBytes / 1048576).toFixed(1)} MB`
+
+                    : `${(sizeBytes / 1024).toFixed(1)} KB`;
+
+                    fileInfo.textContent = `${sizeStr} · ${format} · ↓${downloads.toLocaleString()}`;
+
+                } catch (err) {
+
+                    fileInfo.textContent = '文件属性获取失败';
+
+                } finally {
+
+                    console.log('请求完成');
+
+            }
+            
+        })();
+
+    </script>
+
 </html>
