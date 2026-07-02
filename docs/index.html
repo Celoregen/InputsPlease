@@ -1,158 +1,117 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>请输入文本 - 第三方下载 </title>
-    <meta name="description" content="请输入文本的第三方下载站">
-    <style>
-        :root {
-            --bg-color: #ffffff;
-            --card-bg: #f8f9fa;
-            --text-main: #1a1a1a;
-            --text-sub: #666666;
-            --primary: #0d6efd;
-            --primary-hover: #0b5ed7;
-            --border: #e9ecef;
-            --shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>《请输入文本》· 第三方下载站</title>
+        <link rel="icon" href="/img/ico.svg">
+        <meta name="description" content="《请输入文本》—— 一方文学的自留地。创刊号现已发布，下载阅读，欢迎投稿。">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@300;700&family=Noto+Serif+SC:wght@300;900&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style_index.css">
+    </head>
+    <body>
+        <div class="background">
 
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg-color: #121212;
-                --card-bg: #1e1e1e;
-                --text-main: #e0e0e0;
-                --text-sub: #a0a0a0;
-                --primary: #4dabf7;
-                --primary-hover: #339af0;
-                --border: #333333;
-                --shadow: 0 4px 12px rgba(0,0,0,0.3);
-            }
-        }
+            <!-- 顶部导航栏 -->
+            <header>
+                <div class="ico-space">
+                    <span class="web-title">《请输入文本》</span>
+                    <span class="web-slogan">我们的文学自留地</span>
+                </div>
+                <nav>
+                    <a href="/index.html" class="navigation-button">最新一期</a>
+                    <a href="/section.html" class="navigation-button">栏目导览</a>
+                    <a href="/previous.html" class="navigation-button">往期下载</a>
+                    <a href="https://github.com/Celoregen/InputsPlease" class="navigation-button">Github</a>
+                </nav>
+            </header>
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            transition: background 0.3s, color 0.3s;
-        }
+            <!-- 最新一期下载主体 -->
+             <section class="body-container">
+                <div class="cover-part">
+                    <div class="img-head">
+                        <div class="img-word">最新一期</div>
+                        <div class="img-meta">创刊号 · 2026 Vol.1 · 季刊</div>
+                    </div>
+                    <div class="img-body">
+                        <div class="img-tap"> </div>
+                        <img src="https://github.com/Celoregen/InputsPlease/releases/latest/download/cover.jpeg" alt="请输入文本 · 最新一期封面" class="img-cover">
+                    </div>
+                </div>
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
+                <div class="button-part">
+                    <div class="title">《请输入文本》</div>
+                    <div class="title-en">PLEASE ENTER TEXT</div>
+                    <div class="subtitle">—— 你负责打字，剩下的交给我们</div>
+                    <p class="introduction">文本框装不下八千份稿子，于是它变成了一本杂志。</p>
+                    <div class="download-button-container">
+                        <a href="https://github.com/Celoregen/InputsPlease/releases/latest/download/publication.pdf" class="download-button">↓ 下载最新一期·PDF</a>
+                    </div>
+                    <div class="file-information" id="file-info">文件信息</div>
+                    <p class="notice">感谢每一个热爱创作的你。</p>
+                </div>
+             </section>
 
-        header { text-align: center; margin-bottom: 50px; }
-        h1 { font-size: 2.5rem; margin-bottom: 10px; letter-spacing: -0.5px; }
-        .subtitle { color: var(--text-sub); font-size: 1.1rem; }
-        .version-badge {
-            display: inline-block;
-            background: var(--primary);
-            color: #fff;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-top: 10px;
-            font-weight: 600;
-        }
-
-        .download-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: var(--shadow);
-            margin-bottom: 30px;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            padding: 16px;
-            background: var(--primary);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            transition: transform 0.2s, background 0.2s;
-        }
-        .btn:hover { background: var(--primary-hover); transform: translateY(-2px); }
-        .btn svg { margin-right: 8px; }
-
-        .meta-info {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 15px;
-            font-size: 0.85rem;
-            color: var(--text-sub);
-        }
-
-        .changelog { margin-top: 40px; }
-        .changelog h3 { font-size: 1.2rem; margin-bottom: 15px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
-        .changelog ul { list-style: none; padding-left: 0; }
-        .changelog li { margin-bottom: 8px; padding-left: 20px; position: relative; color: var(--text-sub); }
-        .changelog li::before { content: "•"; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
-
-        footer {
-            text-align: center;
-            margin-top: 60px;
-            font-size: 0.85rem;
-            color: var(--text-sub);
-        }
-        footer a { color: var(--primary); text-decoration: none; }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <header>
-        <h1>请输入文本</h1>
-
-        <p class="subtitle">公告：应编辑部要求，此下载站暂时停止提供分发服务，预计恢复时间：7月3日</p>
-        <p>新版页面正在攒劲开发中，别慌等我憋个大的😋[doge]</p>
-        <!-- 👇 在这里修改版本号 -->
-        <span class="version-badge">v1.0.0 Stable</span>
-    </header>
-
-    <main>
-        <div class="download-card">
-            <!-- 👇 在这里修改下载链接 -->
-            <a href="" class="btn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                下载最新版本 (PDF)
-            </a>
-            <div class="meta-info">
-                <!-- 👇 在这里修改文件大小和日期 -->
-                <span>📦 大小: 20.3 MB</span>
-                <span>📅 更新: 2026-06-25</span>
-            </div>
+            <!-- 网站脚注 -->
+             <footer>
+                <p>
+                    © 2026 请输入文本 · Celoregen 由 <a href="https://github.com/Celoregen/InputsPlease" target="">GitHub</a> 托管
+                </p>
+                <p >
+                    <a href="https://github.com/Celoregen/InputsPlease/releases" target="_blank">历史版本</a> ·  
+                    <a href="https://github.com/Celoregen/InputsPlease/issues" target="_blank">问题反馈</a>
+                </p>
+             </footer>
         </div>
+    </body>
 
-        <section class="changelog">
-            <h3>📝 更新日志 (v1.0.0)</h3>
-            <ul>
-                <li>🎉 创刊号正式发布</li>
-                <li>✨ *</li>
-                <li>🐛 *</li>
-                <li>📚 *</li>
-            </ul>
-        </section>
-    </main>
+    <script>
+        
+        const fileInfo = document.getElementById('file-info');
 
-    <footer>
-        <p>© 2026 InputsPlease. 由 <a href="" target="_blank">GitHub</a> 托管</p>
-        <p style="margin-top:5px;">
-            <a href="" target="_blank">历史版本</a> · 
-            <a href="" target="_blank">问题反馈</a>
-        </p>
-    </footer>
-</div>
+            (async () => {
 
-</body>
+                try {
+
+                    fileInfo.textContent = '请求中...';
+
+                    const res = await fetch('https://api.github.com/repos/Celoregen/InputsPlease/releases/latest');
+
+                    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+                    const data = await res.json();
+
+                    const asset = data.assets?.find(a => a.name === 'publication.pdf');
+
+                    const sizeBytes = asset?.size ?? 0;
+
+                    const format = asset?.name?.split('.').pop()?.toUpperCase() ?? 'UNKNOWN';
+
+                    const downloads = asset?.download_count ?? 0;
+
+                    const sizeStr = sizeBytes > 1048576
+
+                    ? `${(sizeBytes / 1048576).toFixed(1)} MB`
+
+                    : `${(sizeBytes / 1024).toFixed(1)} KB`;
+
+                    fileInfo.textContent = `${sizeStr} · ${format} · ↓${downloads.toLocaleString()}`;
+
+                } catch (err) {
+
+                    fileInfo.textContent = '文件属性获取失败';
+
+                } finally {
+
+                    console.log('请求完成');
+
+            }
+            
+        })();
+
+    </script>
+
 </html>

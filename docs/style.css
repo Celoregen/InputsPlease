@@ -1,0 +1,73 @@
+.background{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 80vw;
+    min-width: 360px;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-self: stretch;
+    margin: 0;
+    padding: 26px 32px;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-bottom: 1px dashed #ddd0b8;
+}
+
+body{
+    margin: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: #faf6ec;
+    background-image: radial-gradient(rgba(74,60,40,0.05) 1px);
+    background-size: 15px 15px;
+    font-family: 'Noto Serif SC', serif;
+    color: #2c2620;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2vh auto;
+    line-height: 0.2;
+    font-size: 0.8rem;
+}
+
+a{
+    color: #928272;
+    text-decoration: none
+}
+
+a:hover{
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-decoration-color: currentColor;
+    text-underline-offset: 3px;
+}
+
+.web-title{
+    font-family: 'Noto Serif SC', serif; 
+    font-weight: 900;             
+    font-size: 24px;              
+    letter-spacing: 0.02em;
+}
+
+.web-slogan{
+    display: inline-block;
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 18px;
+    color: #c9543b;
+    transform: rotate(-1.5deg);
+}
+
+.navigation-button{
+    padding: 2px;
+    gap: 3px;
+}
