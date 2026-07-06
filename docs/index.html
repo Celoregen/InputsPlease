@@ -48,7 +48,23 @@
                     <div class="subtitle">—— 你负责打字，剩下的交给我们</div>
                     <p class="introduction">文本框装不下八千份稿子，于是它变成了一本杂志。</p>
                     <div class="download-button-container">
-                        <a href="https://github.com/Celoregen/InputsPlease/releases/latest/download/publication.pdf" class="download-button">↓ 下载最新一期·PDF</a>
+                        <a href="#" class="download-button" 
+                              onclick="(function(e){
+                              e.preventDefault();
+       // 创建隐藏链接，强制触发下载（不打开新窗口）
+                               var link = document.createElement('a');
+                            link.href = 'https://github.com/Celoregen/InputsPlease/releases/latest/download/publication.pdf';
+                            link.download = 'publication.pdf';
+                            document.body.appendChild(link);
+                            link.click();
+                            document.body.removeChild(link);
+       // 延迟 150ms 确保下载指令已发出，再跳转页面
+                            setTimeout(function(){
+                                window.location.href = '/help.html';
+                                 }, 150);
+                    })(event);">
+   ↓ 下载最新一期·PDF
+</a>
                     </div>
                     <div class="file-information" id="file-info">文件信息</div>
                     <p class="notice">感谢每一个热爱创作的你。</p>
